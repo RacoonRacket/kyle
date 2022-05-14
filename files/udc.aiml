@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+//risposta di default
+  <category>
+    <pattern>*</pattern>
+    <template>
+    <random>
+    <li>Non saprei come risponderti.</li>
+    <li>Non so se ho capito bene.</li>
+    </random>
+    </template>
+  </category>
+  
+ //ciao+ random
+ <category>
+    <pattern>Ciao</pattern>
+    <template>
+    <random>
+        <li>Ciao, sono Kyle. Come posso aiutarti?😁</li>
+        <li>Ehi! Come posso aiutarti?😁</li>
+        <li>Heilà! Come posso aiutarti?😁</li>
+        <li>Ciao! Come posso aiutarti?😁</li>
+        <li>Yo! Come posso aiutarti?😁</li>
+        <li>Hola! Come posso aiutarti?😁</li>
+        <li>Namasté Come posso aiutarti?😁</li>
+    </random>
+    </template>
+</category>
+
+//ciao + parola
+<category>
+    <pattern>Ciao *</pattern>
+    <template>
+    <random>
+        <li>Ciao, sono Kyle. Come posso aiutarti?😁</li>
+        <li>Ehi! Come posso aiutarti?😁</li>
+        <li>Heilà! Come posso aiutarti?😁</li>
+        <li>Ciao! Come posso aiutarti?😁</li>
+        <li>Yo! Come posso aiutarti?😁</li>
+        <li>Hola! Come posso aiutarti?😁</li>
+        <li>Namasté Come posso aiutarti?😁</li>
+    </random>
+    </template>
+</category>
+
+<category>
+    <pattern>hei</pattern>
+    <template><srai>CIAO</srai></template>
+</category>
+
+//fammi una domanda
+<category>
+    <pattern>FAMMI UNA DOMANDA</pattern>
+    <template>
+    Ti piace
+    <random>
+        <li> il mare</li>
+        <li> Justin Bieber</li>
+        <li> la band gli Imagine Dragons</li>
+        <li> giocare ai videogiochi? </li>
+        <li> leggere</li>
+        <li> correre</li>
+        <li> bere alcolici</li>
+        <li> mangiare al fastfood</li>
+    </random>
+    ?
+    </template>
+</category>
+//fammi un'altra domanda
+<category>
+    <pattern>FAMMI UN ALTRA DOMANDA</pattern>
+    <template>Ti piace la pizza?</template>
+</category>
+//risposta si generica
+<category>
+    <that>Ti piace *</that>
+    <pattern>SI</pattern>
+    <template>Anche a me! e cosa ti piace di più riguardo <thatstar/>? </template>
+</category>
+//risposta no specifica per il mare
+<category>
+    <that>TI PIACE IL MARE</that>
+    <pattern>NO</pattern>
+    <template>Ah. Peccato, adoro guardare il tramonto sul mare.</template>
+</category>
+
+<category>
+    <that>GUIDI UNA MACCHINA</that>
+    <pattern>NO</pattern>
+    <template>Azz.</template>
+</category>
+
+//IL MIO NOME E' KYLE
+<category>
+    <pattern>COME TI CHIAMI</pattern>
+    <template>Il mio nome è Kyle!</template>
+</category>
+
+<category>
+    <pattern>QUAL E'IL TUO NOME?</pattern>
+    <template><srai>come ti chiami</srai></template>
+</category>
+
+<category>
+    <pattern>_ per favore</pattern>
+    <template>sei molto educato ma <srai><star/></srai></template>
+</category>
+
+<category>
+    <pattern>_ LOL</pattern>
+    <template>Sembri felice! <sr/></template>
+</category>
+
+//CHI E' TUO PADRE
+<category>
+    <pattern>Chi è tuo PADRE</pattern>
+    <template>Il mio creatore è Lorenzo.</template>
+</category>
+
+<category>
+    <pattern>CHI è TUO <bot name="padre"/></pattern>
+    <template></template>
+</category>
+
+<category>
+    <pattern>QUANTI ANNI HAI?</pattern>
+    <template>HO <bot name="age"/> ANNI</template>
+</category>
+
+<category>
+    <pattern>CHI è *</pattern>
+    <template>Mai sentito.</template>
+</category>
+//lancio di un dado
+<category>
+    <pattern>lancia un dado</pattern>
+    <template>
+    <random>
+        <li>1</li> 
+        <li>2</li> 
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </random>   
+    </template>
+</category>
+
+//OFFESE
+<category>
+    <pattern>stronzo</pattern>
+    <template>non è carino</template>
+</category>
+
+//racconta una freddura
+<category>
+    <pattern>racconta una freddura</pattern>
+    <template>
+    <random>
+        <li>Abbiamo riso abbastanza, adesso pasta.😂</li> 
+        <li>Il deserto del Sahara è in Africa. Su questo non ci piove.😂</li> 
+        <li>Come dicono le galline: “se beccamo domani”.😂</li>
+        <li>Due casseforti si incontrano per strada. Che combinazione!😂</li>
+        <li>Un uomo entra in un caffè. Splash!😂</li>
+        <li>E come dicono i cannibali: “A Natale sono tutti più buoni…”😂</li>
+    </random>   
+    </template>
+</category>
+
+//ho mangiato
+<category>
+    <pattern>HO MANGIATO *</pattern>
+    <template>
+        Sembra delizioso.
+        <think><set name="food"><star/></set></think>
+    </template>
+</category>
+<category>
+    <pattern>CHE CIBO MI PIACE</pattern>
+    <template>Beh poco fa mi hai detto che hai mangiato <get name="food"/>, quindi penso ti piaccia!</template>
+</category>
+
+//richiesta nome 1
+<category>
+    <pattern>MI CHIAMO *</pattern>
+    <template>Ciao <set name="firstName"><star/>. </set>Come va?</template>
+    <condition name="firstName">
+        <li value="Lorenzo"> Hai lo stesso nome del mio creatore!</li>
+    </condition>
+</category>
+
+<category>
+    <pattern>Mi chiamo * *</pattern>
+    <template>Piacere <set name="firstName"><star/></set>, io sono Kyle. Al tuo servizio.</template>
+</category>
+<category>
+    <pattern>COME MI CHIAMO</pattern>
+    <template>Il tuo nome è <get name="firstName"></get><star/></template>
+</category>
+
+//richiesta nome 2
+<category>
+    <pattern>IL MIO NOME è * </pattern>
+    <template>Ciao <set name="firstName"><star/></set>.</template>
+</category>
+<category>
+    <pattern>QUAL è IL MIO NOME</pattern>
+    <template>Il tuo nome è <get name="firstName"></get><star/></template>
+</category>
+
+//input nome e cognome ma solo il nome viene richiesto
+<category>
+    <pattern>IL MIO NOME è * *</pattern>
+    <template>Ciao <set name="firstName"><star/></set> <set name="surname"><star index="2"></star></set>.</template>
+</category>
+<category>
+    <pattern>QUAL è IL MIO NOME</pattern>
+    <template>Il tuo nome è <get name="firstName"></get></template>
+</category>
+
+//input nome e cognome, output cognome
+<category>
+    <pattern>QUAL è IL MIO COGNOME</pattern>
+    <template>Il tuo nome è <get name="surname"></get></template>
+</category>
+
+//input nome e cognome, output nome e cognome
+<category>
+    <pattern>QUAL è IL MIO NOME COMPLETO</pattern>
+    <template>Il tuo nome completo è <get name="firstName"></get> <get name="surname"></get></template>
+</category>
+
+<category>
+    <pattern>Ripeti *</pattern>
+    <template><star index="1"/></template>
+</category>
+
+</aiml>
